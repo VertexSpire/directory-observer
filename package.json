@@ -1,0 +1,68 @@
+{
+  "name": "directory-observer",
+  "version": "1.0.0",
+  "description": "A simple Node.js package to watch a directory for file events like create, update, delete, move, and rename.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "lint": "eslint 'src/**/*.{ts,js}'",
+    "lint:fix": "eslint 'src/**/*.{ts,js}' 'tests/**/*.{ts,js}' --fix",
+    "format": "prettier --write src tests",
+    "test": "jest",
+    "prepare": "husky || true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/directory-watcher.git"
+  },
+  "keywords": [
+    "directory",
+    "file-watcher",
+    "typescript",
+    "file-events",
+    "node"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "chokidar": "^3.5.3"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6",
+    "@semantic-release/git": "^10",
+    "@semantic-release/npm": "^12",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^20.5.9",
+    "eslint": "^8.50.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "husky": "^8.0.3",
+    "jest": "^29.7.0",
+    "lint-staged": "^14.0.0",
+    "prettier": "^3.0.3",
+    "rimraf": "^5.0.0",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.3.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,js}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "tests/**/*.{ts,js}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
